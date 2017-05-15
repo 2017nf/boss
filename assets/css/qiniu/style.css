@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header,  menu, nav, section, summary, time, mark, audio, video, input {
+    margin: 0px;
+    padding: 0px;
+    border: medium none;
+    outline: 0px none;
+    font: inherit;
+    vertical-align: baseline;
+    font-size: 12px;
+}
+i, cite, em, var, address, dfn {
+    font-style: normal;
+}
+ol, ul {
+    list-style: outside none none;
+}
+li {
+    display: list-item;
+    list-style-type:none;
+}
+.clear {
+    clear: both;
+}
+.aline_center {
+    text-align: center;
+}
+.Spacing-2 {
+    padding: 20px 0px 0px;
+}
+#wrapper {
+    margin: 1em;
+    width: auto;
+    min-width: 280px;
+
+}
+#container {
+    border: 1px solid #DADADA;
+    color: #838383;
+    font-size: 12px;
+    margin-top: 10px;
+    background-color: #FFF;
+}
+#uploader{
+}
+#uploader .queueList {
+    margin: 20px;
+}
+#uploader .placeholder {
+    border: 3px dashed #E6E6E6;
+    min-height: 238px;
+    padding-top: 158px;
+    background: transparent url("../../images/image.png") no-repeat scroll center 93px;
+    /*color: #CCC;*/
+    font-size: 18px;
+    position: relative;
+}
+#uploader .filelist {
+    list-style: outside none none;
+    margin: 0px;
+    padding: 0px;
+}
+#uploader .statusBar {
+    height: 63px;
+    border-top: 1px solid #DADADA;
+    padding: 0px 20px;
+    line-height: 63px;
+    vertical-align: middle;
+    position: relative;
+}
+#uploader .statusBar .info {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+}
+#uploader .placeholder .webuploader-pick {
+    font-size: 18px;
+    background: #00B7EE none repeat scroll 0% 0%;
+    border-radius: 3px;
+    line-height: 44px;
+    padding: 0px 30px;
+    color: #FFF;
+    display: inline-block;
+    margin: 20px auto;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.info {
+    position: relative;
+    background: transparent none repeat scroll 0px 0px;
+    /*height: 85px;*/
+    line-height: 24px;
+    cursor: default;
+    /*float: left;*/
+
+    /*width: 300px;*/
+}
+#uploader .statusBar .btns {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 40px;
+}
+#filePicker2 {
+    display: inline-block;
+    float: left;
+}
+#uploader .statusBar .btns .uploadBtn {
+    background: #00B7EE none repeat scroll 0% 0%;
+    color: #FFF;
+    border-color: transparent;
+}
+/*隱藏hash和圖片鏈接地址*/
+.hash{
+    display: none;
+}
+/*隱藏分塊上傳*/
+.yc{/*隱藏分塊上傳*/
+    display: none;
+}
+.progressContainer{
+    float:left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.green{
+    background:url("../../images/zwtp.png") no-repeat center;
+    padding: 10px;
+    width: 200px;
+    height:100px;
+    font-size: 12px;
+}
+#uploader .file-panel {
+    position: absolute;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    z-index: 300;
+    display: none;
+}
+#uploader .file-panel .fopLink{
+    color:#fff;
+}
+#uploader .table ul li .imgWrapper:hover .file-panel {
+    display: block;
+}
+#uploader .file-panel span {
+    width: 24px;
+    height: 24px;
+    display: inline;
+    float: right;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: transparent url("../../images/icons.png") no-repeat scroll -48px -24px;
+    margin: 5px 1px 1px;
+    cursor: pointer;
+}
