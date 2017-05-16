@@ -3,20 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title></title>
-    <!-- Bootstrap Styles-->
-    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
-    <!-- FontAwesome Styles-->
-    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
-    <!-- Morris Chart Styles-->
-
-    <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
-    <!-- Google Fonts-->
-
-    <!-- TABLE STYLES-->
-    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/js/layui/css/layui.css" media="all">
+    <title>用户列表</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <link href="../assets/css/custom-styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/js/layui/css/layui.css" media="all">
 </head>
 <body>
 <div id="wrapper">
@@ -28,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-comments"></i> <strong>美妆</strong></a>
+            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i> <strong>美妆</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -56,9 +47,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-messages -->
             </li>
-            <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                     <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -105,9 +94,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-tasks -->
             </li>
-            <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                     <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -147,9 +134,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-alerts -->
             </li>
-            <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -163,19 +148,16 @@
                     <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                     </li>
                 </ul>
-                <!-- /.dropdown-user -->
             </li>
-            <!-- /.dropdown -->
         </ul>
     </nav>
-    <!--/. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
         <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i>首页</a>
+                    <a class="active-menu" href="../index.html"><i class="fa fa-dashboard"></i>首页</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-sitemap"></i>会员管理<span class="fa arrow"></span></a>
@@ -210,7 +192,6 @@
             </ul>
         </div>
     </nav>
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
@@ -233,27 +214,11 @@
                                     </tr>
                                     </thead>
                                     <tbody id="biuuu_city_list">
-                                    <!--<tr class="even gradeC">-->
-                                    <!--<td>Trident</td>-->
-                                    <!--<td>Internet Explorer 5.0</td>-->
-                                    <!--<td>Win 95+</td>-->
-                                    <!--<td class="center">5</td>-->
-                                    <!--<td class="center">C</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr class="odd gradeA">-->
-                                    <!--<td>Trident</td>-->
-                                    <!--<td>Internet Explorer 5.5</td>-->
-                                    <!--<td>Win 95+</td>-->
-                                    <!--<td class="center">5.5</td>-->
-                                    <!--<td class="center">A</td>-->
-                                    <!--</tr>-->
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
                     </div>
-                    <!--End Advanced Tables -->
                 </div>
             </div>
 
@@ -267,25 +232,14 @@
                     <div id="pagenation"></div>
                 </div>
             </div>
-            <!-- /. ROW  -->
             <footer class="text-center"><p>Copyright &copy; 2016.Company name All rights reserved.</p></footer>
         </div>
-        <!-- /. PAGE INNER  -->
     </div>
-    <!-- /. PAGE WRAPPER  -->
 </div>
-<!-- /. PAGE WRAPPER  -->
-<!-- /. WRAPPER  -->
-<!-- JS Scripts-->
-<!-- jQuery Js -->
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<!-- Bootstrap Js -->
-<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-<!-- layui Js -->
-<script src="assets/js/layui/layui.js" charset="utf-8"></script>
-<script src="assets/js/layui/lay/modules/laypage.js" charset="utf-8"></script>
-
-
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+<script src="../assets/js/layui/layui.js" charset="utf-8"></script>
+<script src="../assets/js/layui/lay/modules/laypage.js" charset="utf-8"></script>
 <script>
     var url = "http://www.6pyun.com/api/mall/store/page";
     var tmpl = "<tr class='odd gradeX'><td>${0}</td><td>${1}</td><td>${2}</td><td class='center'>${3}</td><td class='center'>${4}</td></tr>";
