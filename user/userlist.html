@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>用户列表</title>
+    <title>会员列表</title>
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <link href="../assets/css/custom-styles.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/js/layui/css/layui.css" media="all">
+    <link href="../assets/css/self/userlist.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="wrapper">
@@ -212,14 +213,7 @@
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>表头</th>
-                                        <th>表头</th>
-                                        <th>表头</th>
-                                        <th>表头</th>
-                                        <th>表头</th>
-                                    </tr>
+                                    <thead id="thead_userlist">
                                     </thead>
                                     <tbody id="biuuu_city_list">
                                     </tbody>
@@ -248,9 +242,19 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
 <script src="../assets/js/layui/layui.js" charset="utf-8"></script>
 <script src="../assets/js/layui/lay/modules/laypage.js" charset="utf-8"></script>
+<script src="../assets/js/self/base.js" charset="utf-8"></script>
 <script>
-    var url = "http://www.6pyun.com/api/mall/store/page";
-    var tmpl = "<tr class='odd gradeX'><td>${0}</td><td>${1}</td><td>${2}</td><td class='center'>${3}</td><td class='center'>${4}</td></tr>";
+    var url = baseUrl +"/user/list";
+    var thead="<tr>"+
+            "<th>头像</th>"+
+            "<th>用户ID</th>"+
+            "<th>微信号</th>"+
+            "<th>昵称</th>"+
+            "<th>手机号</th>"+
+            "<th>用户地址</th>"+
+            "<th>注册时间</th>"+
+            "</tr>";
+    var tmpl = "<tr class='odd gradeX'><td>${0}</td><td>${1}</td><td >${2}</td><td >${3}</td><td >${4}</td><td>${5}</td><td>${6}</td></tr>";
     var data = [];
     var option = {
         pageSize: 10,
@@ -272,7 +276,10 @@
             console.log("render : " + data);
 //                var thisData = data.concat().splice(curr*nums-nums, nums);
             layui.each(data, function (index, item) {
-                arr.push(tmpl.replace("${0}", item.city).replace("${1}", item.createTime).replace("${2}", item.storeName).replace("${3}", item.id).replace("${4}", item.id));
+                arr.push(
+                        tmpl.replace("${0}", "<img src='"+item.headImgUrl+"' style='width: 50px;height: 50px'>").replace("${1}", item.uid).replace("${2}", item.openId).
+                             replace("${3}", item.nickName).replace("${4}", item.phone).replace("${5}", item.addr).replace("${6}", item.createTime)
+                        );
             });
             return arr.join('');
         };
@@ -296,6 +303,7 @@
                             jump: function (obj, first) {
                                 option.pageNo = obj.curr;
                                 setting.curr = obj.curr;
+                                $("#thead_userlist").html(thead);
                                 $("#biuuu_city_list").html(render(data, tmpl));
                                 if (!first) {
                                     load(url, option);
