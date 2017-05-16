@@ -207,18 +207,11 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <ul id="biuuu_city_list"></ul>
+
+                    这里添加新内容 这里添加新内容 这里添加新内容 这里添加新内容 这里添加新内容 这里添加新内容 这里添加新内容
+
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;"> </fieldset>
-                        <div id="demo2"></div>
-                    </div>
-                </div>
-                    <!-- /. ROW  -->
-                </div>
-                <footer class="text-center"><p>Copyright &copy; 2016.Company name All rights reserved.</p></footer>
+                <footer class="text-center"><p>Copyright &copy; 2017.Company name All rights reserved.</p></footer>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -232,72 +225,8 @@
     <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
     <!-- Metis Menu Js -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-      <!-- Custom Js -->
-    <!--<script src="assets/js/custom-scripts.js"></script>-->
 
     <script src="assets/js/layui/layui.js" charset="utf-8"></script>
     <script src="assets/js/layui/lay/modules/laypage.js" charset="utf-8"></script>
-
-    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-    <script>
-        //测试数据
-        var data = [
-            '北京',
-            '上海',
-            '广州',
-            '深圳',
-            '杭州',
-            '长沙',
-            '合肥',
-            '宁夏',
-            '成都',
-            '西安',
-            '南昌',
-            '上饶',
-            '沈阳',
-            '济南',
-            '厦门',
-            '福州',
-            '九江',
-            '宜春',
-            '台北'
-        ];
-
-        layui.use(['laypage', 'layer'], function(){
-            var laypage = layui.laypage;
-            var layer = layui.layer;
-
-
-            laypage({
-                cont: 'demo2'
-                ,pages: 100
-                ,skin: '#1E9FFF',
-                skip: false //是否开启跳页
-            });
-
-
-            var nums = 5; //每页出现的数据量
-
-            //模拟渲染
-            var render = function(data, curr){
-                var arr = [];
-                var thisData = data.concat().splice(curr*nums-nums, nums);
-                layui.each(thisData, function(index, item){
-                    arr.push('<li>'+ item +'</li>');
-                });
-                return arr.join('');
-            };
-
-            //调用分页
-            laypage({
-                cont: 'demo2'
-                ,pages: Math.ceil(data.length/nums) //得到总页数
-                ,jump: function(obj){
-                    document.getElementById('biuuu_city_list').innerHTML = render(data, obj.curr);
-                }
-            });
-
-        });
-    </script>
 </body>
 </html>
