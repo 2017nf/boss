@@ -26,13 +26,14 @@ layui.use(['laypage', 'layer'], function () {
     laypage(setting);
     //模拟渲染
     var render = function (data, tmpl) {
+        tool.formatArrayValue(data);
         var arr = [];
         console.log("render : " + data);
 //                var thisData = data.concat().splice(curr*nums-nums, nums);
         layui.each(data, function (index, item) {
             arr.push(
                 tmpl.replace("${0}", "<img src='"+item.headImgUrl+"' style='width: 50px;height: 50px'>").replace("${1}", item.uid).replace("${2}", item.openId).
-                replace("${3}", item.nickName).replace("${4}", item.phone).replace("${5}", item.addr).replace("${6}", item.createTime)
+                replace("${3}", item.nickName).replace("${4}", item.phone).replace("${5}", item.addr).replace("${6}", tool.formatDate(item.createTime))
             );
         });
         return arr.join('');
