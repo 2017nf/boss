@@ -3,4 +3,4 @@
  */
 
 // var baseUrl="https://www.sunnyflower.club/manage";
-var baseUrl="http://localhost:8090/manage";
+var baseUrl="http://192.168.2.222:8090/manage";
