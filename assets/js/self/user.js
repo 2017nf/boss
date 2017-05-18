@@ -58,7 +58,7 @@ layui.use(['laypage', 'layer'], function () {
                             option.pageNo = obj.curr;
                             setting.curr = obj.curr;
                             $("#thead_userlist").html(thead);
-                            $("#biuuu_city_list").html(render(data, tmpl));
+                            $("#tbody_userlist").html(render(data, tmpl));
                             if (!first) {
                                 load(url, option);
                             }
