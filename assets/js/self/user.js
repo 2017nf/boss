@@ -26,7 +26,7 @@ layui.use(['laypage', 'layer'], function () {
     laypage(setting);
     //模拟渲染
     var render = function (data, tmpl) {
-        tool.formatArrayValue(data);
+        data=tool.formatValue(data);
         var arr = [];
         console.log("render : " + data);
 //                var thisData = data.concat().splice(curr*nums-nums, nums);

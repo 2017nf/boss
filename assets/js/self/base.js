@@ -15,16 +15,36 @@ var tool={
     formatArrayValue : function (obj) {
         if (obj instanceof Array){
             for (var v in obj){
-                obj[v]=this.formatValue(obj[v]);
+                obj[v]=this.formatObjValue(obj[v]);
             }
         }
         return obj;
     },
-    formatValue : function (obj) {
-        for (var v in obj){
-            if(obj[v]==null || obj[v]=='null' || obj[v]== undefined){
-                obj[v]="";
+    formatObjValue : function (obj) {
+        if (typeof obj=='object'){
+            for (var v in obj){
+                obj[v]=this.formatStrValue(obj[v]);
             }
+        }
+        return obj;
+    },
+    formatStrValue : function (str) {
+        if(str==null || str=="null" || str== "undefined" || str== ""){
+            str="";
+        }
+        return str;
+    },
+    formatValue : function (obj) {
+        if (typeof obj=='object' && obj instanceof Array){
+
+            obj=this.formatArrayValue(obj);
+            return obj;
+        }else if (typeof obj=='obj' && obj instanceof Object){
+            obj=this.formatObjValue(obj);
+            return obj;
+        }else if (typeof obj=='string' ){
+            obj=this.formatValue(obj);
+            return obj;
         }
         return obj;
     }
