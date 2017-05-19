@@ -64,7 +64,7 @@ function load(url, option) {
                         option.pageNo = obj.curr;
                         setting.curr = obj.curr;
                         $("#thead_goodslist").html(thead);
-                        $("#biuuu_city_list").html(render(data, tmpl));
+                        $("#tbody_goodslist").html(render(data, tmpl));
                         if (!first) {
                             load(url, option);
                         }
