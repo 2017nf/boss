@@ -7,6 +7,9 @@ var baseUrl = "http://192.168.2.222:8090/manage";
 
 var tool = {
     formatDate: function (timestamp) {
+        if(!timestamp){
+            return "";
+        }
         var d = new Date(timestamp);
         var dformat = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
             + ' ' + [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
