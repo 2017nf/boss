@@ -92,10 +92,7 @@ $(document).on('click.bs.carousel.data-api','#btnDel',function (e){
     // 判断是否至少选择一项
     var checkedNum = $("input[name='subChk']:checked").length;
     if(checkedNum == 0) {
-        layer.confirm('请选择至少一项！',
-            function(index){
-                layer.close(index);
-            });
+        layer.alert('请选择至少一项！');
         return;
     }
     // 批量选择
@@ -122,4 +119,19 @@ $(document).on('click.bs.carousel.data-api','#btnDel',function (e){
 
 $(document).on('click.bs.carousel.data-api','#btnAdd',function (e){
     // tool.layer("test",[100,100],"http://localhost:63342/boss/user/userlist.html","http://localhost:63342/boss/user/userlist.html","http://localhost:63342/boss/user/userlist.html");
+    layer.open({
+        type: 2,
+        title: ['新增商品', 'background-color: #00bb9d;text-align:center;font-size:18px;'],
+        shadeClose: true,
+        shade: false,
+        maxmin: true,
+        area: ['400px', '500px'],
+        content: 'goodsForm.html',
+        end: function(){
+            // 如果是通过单击关闭按钮关闭弹出层，父画面没有此表单
+            if($("#popupForm").length === 1){
+                $("#popupForm").submit();
+            }
+        }
+    });
 });

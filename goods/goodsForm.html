@@ -1,0 +1,37 @@
+
+<!-- Bootstrap Styles-->
+<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<!-- FontAwesome Styles-->
+<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+<link href="../assets/css/self/goodsadd.css" rel="stylesheet"/>
+<!-- Custom Styles-->
+<!--<link href="assets/css/custom-styles.css" rel="stylesheet" />-->
+<form id="popupForm">
+    <fieldset>
+        <div class="form-row">
+            <div class="field-label"><label style="color:red">*</label><label for="field1">商品名</label>:</div>
+            <div class="field-widget"><input name="name" id="field1" class="required validation-failed" title="Enter your name"></div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"><label style="color:red">*</label><label for="field2">原价</label>:</div>
+            <div class="field-widget"><input name="originalPrice" id="field2" class="required validation-failed" title="Enter your name"></div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"><label style="color:red">*</label><label for="field3">实价</label>:</div>
+            <div class="field-widget"><input name="price" id="field3" class="required validation-failed" title="Enter your name"></div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"><label style="color:red">*</label><label for="field4">数量</label>:</div>
+            <div class="field-widget"><input name="stock" id="field4" class="required validation-failed" title="Enter your name"></div>
+        </div>
+        <div class="form-row">
+            <div class="field-label"><label for="field5">备注</label>:</div>
+            <div class="field-widget"><textarea name="remark" id="field5" class="required validation-passed"></textarea></div>
+        </div>
+    </fieldset>
+    <input type="button" class="submit" value="新增" onclick="save()">
+    <input class="reset" type="button" value="取消" onclick="cancel()">
+</form>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script src="../assets/js/self/base.js" charset="utf-8"></script>
+<script src="../assets/js/self/goodsadd.js" charset="utf-8"></script>
