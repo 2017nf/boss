@@ -7,7 +7,7 @@ var baseUrl = "http://192.168.2.222:8090/manage";
 
 var tool = {
     formatDate: function (timestamp) {
-        if(!timestamp){
+        if (!timestamp) {
             return "";
         }
         var d = new Date(timestamp);
@@ -52,12 +52,12 @@ var tool = {
         return obj;
     },
 
-    layer : function (title,offset,area,content,cannelpage,okpage) {
+    layer: function (title, offset, area, content, cannelpage, okpage) {
         layer.open({
             type: 1,
             title: title,//不显示标题栏
             closeBtn: false,
-            area:area,
+            area: area,
             offset: offset,
             shade: 0.8,
             id: 'LAY_layuipro', //设定一个id，防止重复弹出
@@ -78,5 +78,19 @@ var tool = {
                 });
             }
         })
+    },
+    islogin: function () {
+        var token = sessionStorage.getItem("userInfo");
+        if (token) {
+            return true;
+        }
+        return false;
+    },
+    user: {
+        id: JSON.parse(sessionStorage.getItem("userInfo")).id,
+        userName: JSON.parse(sessionStorage.getItem("userInfo")).userName,
+        nickName: JSON.parse(sessionStorage.getItem("userInfo")).nickName,
+        phone: JSON.parse(sessionStorage.getItem("userInfo")).phone,
+        headImgUrl: JSON.parse(sessionStorage.getItem("userInfo")).headImgUrl
     }
 }
