@@ -84,6 +84,7 @@ var tool = {
         if (!this.islogin()) {
             window.location.href = "../login.html";
         }
+        $(".nickName").html(JSON.parse(localStorage.getItem("userInfo")).nickName);
     },
     islogin: function () {
         var token = localStorage.getItem("userInfo");
@@ -95,6 +96,10 @@ var tool = {
     loginout: function () {
         localStorage.clear();
         window.location.href="../login.html";
+    },
+    indexLoginOut: function () {
+        localStorage.clear();
+        window.location.href="login.html";
     }
 };
 

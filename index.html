@@ -148,15 +148,17 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                         <i class="fa fa-user fa-fw"></i><span id="nickName" class="nickName"></span><i class="fa fa-caret-down"></i>
+
                     </a>
+
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> 个人中心 </a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a  onclick="tool.loginout();"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                        <li><a  onclick="tool.indexLoginOut();"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -301,7 +303,7 @@
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
     <script src="assets/js/self/base.js"></script>
-
+    <script src="assets/js/self/index.js"></script>
 
 </body>
 
