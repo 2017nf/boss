@@ -1,3 +1,4 @@
+tool.gologin();
 var url = baseUrl +"/order/list";
 var thead="<tr>"+
     "<th>商品</th>"+

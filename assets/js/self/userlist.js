@@ -1,3 +1,4 @@
+tool.gologin();
 var url = baseUrl +"/user/list";
 var thead="<tr>"+
     "<th>头像</th>"+

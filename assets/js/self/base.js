@@ -79,18 +79,35 @@ var tool = {
             }
         })
     },
+    gologin: function () {
+        var href = window.location;
+        if (!this.islogin()) {
+            window.location.href = "../login.html";
+        }
+    },
     islogin: function () {
-        var token = sessionStorage.getItem("userInfo");
+        var token = localStorage.getItem("userInfo");
         if (token) {
             return true;
         }
         return false;
     },
-    user: {
-        id: JSON.parse(sessionStorage.getItem("userInfo")).id,
-        userName: JSON.parse(sessionStorage.getItem("userInfo")).userName,
-        nickName: JSON.parse(sessionStorage.getItem("userInfo")).nickName,
-        phone: JSON.parse(sessionStorage.getItem("userInfo")).phone,
-        headImgUrl: JSON.parse(sessionStorage.getItem("userInfo")).headImgUrl
+    loginout: function () {
+        localStorage.clear();
+        window.location.href="../login.html";
+    }
+};
+
+function getUserInfo() {
+    if (tool.islogin()) {
+        var user = {
+            id: JSON.parse(localStorage.getItem("userInfo")).id,
+            userName: JSON.parse(localStorage.getItem("userInfo")).userName,
+            nickName: JSON.parse(localStorage.getItem("userInfo")).nickName,
+            phone: JSON.parse(localStorage.getItem("userInfo")).phone,
+            headImgUrl: JSON.parse(localStorage.getItem("userInfo")).headImgUrl
+        }
+        return user;
     }
 }
+

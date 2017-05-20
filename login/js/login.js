@@ -40,8 +40,9 @@ function login() {
         success: function (data) {
             console.log(data);
             if (data.code==200){
-                sessionStorage.setItem("token",data.result.token);
-                sessionStorage.setItem("userInfo",JSON.stringify(data.result));
+                localStorage.setItem("token",data.result.token);
+                localStorage.setItem("userInfo",JSON.stringify(data.result));
+                window.location.href="index.html";
             }else {
                 $(".form").parent().find('.msg').css({"display":"block"});
                 $(".form").parent().find('.msg').html(data.msg);

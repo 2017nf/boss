@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/5/16 0016.
  */
+tool.gologin();
 var url = baseUrl +"/goods/list";
 var thead="<tr>"+
     "<th><input type='checkbox' value='all' id='chkAll'></th>"+

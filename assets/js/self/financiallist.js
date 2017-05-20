@@ -1,3 +1,4 @@
+tool.gologin();
 var url = baseUrl +"/finance/list";
 var thead="<tr>"+
     "<th class='display'>ID</th>"+
