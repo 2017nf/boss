@@ -70,7 +70,7 @@ layui.use(['laypage', 'layer'], function () {
                 }
             },
             error: function () {
-                alert("异常！");
+                window.location.href=window.location.href;
             }
         });
     }

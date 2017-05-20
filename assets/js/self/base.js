@@ -2,8 +2,8 @@
  * Created by Administrator on 2017/5/11 0011.
  */
 
-// var baseUrl="https://www.sunnyflower.club/manage";
-var baseUrl = "http://192.168.2.222:8090/manage";
+var baseUrl="https://www.sunnyflower.club/manage";
+// var baseUrl = "http://192.168.2.222:8090/manage";
 
 var tool = {
     formatDate: function (timestamp) {
@@ -83,6 +83,13 @@ var tool = {
         var href = window.location;
         if (!this.islogin()) {
             window.location.href = "../login.html";
+        }
+        $(".nickName").html(JSON.parse(localStorage.getItem("userInfo")).nickName);
+    },
+    indexgologin: function () {
+        var href = window.location;
+        if (!this.islogin()) {
+            window.location.href = "login.html";
         }
         $(".nickName").html(JSON.parse(localStorage.getItem("userInfo")).nickName);
     },

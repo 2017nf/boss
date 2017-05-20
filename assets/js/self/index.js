@@ -1,1 +1,1 @@
-tool.gologin();
+tool.indexgologin();
