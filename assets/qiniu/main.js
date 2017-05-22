@@ -244,9 +244,10 @@ function setUploadImgUrl(){
     var imgUrl="";
     $('#fsUploadProgress').find("div[name='imgUrlDiv']").each(function(a,b){
     	imgUrl+=$(b).find("a:eq(0)").html()+";";
-        console.log("imgUrl: "+imgUrl);
+        alert("imgUrl: "+imgUrl);
     } );              	
     imgUrl=imgUrl.substr(0,imgUrl.length-1);
+    console.log("imgUrl: "+imgUrl);
     if(imgUrl.length>0)
     {
 
