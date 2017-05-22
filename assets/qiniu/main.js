@@ -4,7 +4,8 @@ var domainUrl="";
     function getToken(folderName){
 		$.ajax({
 			type: 'POST',
-			url: "http://119.29.216.138:8090/mall/upload/getToken",
+			// url: "http://119.29.216.138:8090/mall/upload/getToken",
+            url: baseMallUrl+"/upload/getToken",
 			data:"folderName="+folderName,
 			success: function(data) {
 			    console.log(data);
