@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>商品详情</title>
-    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <title>商品分类</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <link href="../assets/css/custom-styles.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/js/layui/css/layui.css" media="all">
@@ -138,7 +138,8 @@
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    <i class="fa fa-user fa-fw"></i> <span id="nickName" class="nickName"></span><i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user fa-fw"></i> <span id="nickName" class="nickName"></span><i
+                        class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> 个人中心 </a>
@@ -146,7 +147,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a  onclick="tool.loginout();"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
+                    <li><a onclick="tool.loginout();"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                     </li>
                 </ul>
             </li>
@@ -204,7 +205,24 @@
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
-
+                <div class="col-sm-2">
+                    商品分类
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    商品名称
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="goodsName" placeholder="商品名称">
+                </div>
             </div>
             <footer class="text-center"><p>Copyright &copy; 2016.Company name All rights reserved.</p></footer>
         </div>

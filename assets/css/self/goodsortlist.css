@@ -1,0 +1,17 @@
+table tr th{
+    text-align: center;
+}
+table tr td{
+    text-align: center;
+}
+
+.display {
+    display: none;
+}
+
+.row-margin{
+    margin: 25px;
+}
+.modal-dialog{
+    width: 80%;
+}

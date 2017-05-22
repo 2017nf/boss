@@ -4,13 +4,12 @@ var domainUrl="";
     function getToken(folderName){
 		$.ajax({
 			type: 'POST',
-			// url: "http://119.29.216.138:8090/mall/upload/getToken",
-            url: baseMallUrl+"/upload/getToken",
+			url: "http://119.29.216.138:8090/mall/upload/getToken",
+            // url: baseMallUrl+"/upload/getToken",
 			data:"folderName="+folderName,
 			success: function(data) {
 			    console.log(data);
 				token=data.result.token;
-                alert(data.result.token);
 				domainUrl=data.result.domain;
 				initLoader();
 			}
@@ -245,19 +244,23 @@ function setUploadImgUrl(){
     var imgUrl="";
     $('#fsUploadProgress').find("div[name='imgUrlDiv']").each(function(a,b){
     	imgUrl+=$(b).find("a:eq(0)").html()+";";
+        console.log("imgUrl: "+imgUrl);
     } );              	
     imgUrl=imgUrl.substr(0,imgUrl.length-1);
     if(imgUrl.length>0)
     {
-	    if($("#controlId").val()=="editLogo"){
-	    	window.parent.setLogoUrl(imgUrl.trim());
-	    }else if($("#controlId").val()=="editImg"){
-	    	window.parent.setImgUrl(imgUrl.trim());
-	    }else if($("#controlId").val()=="editVideo"){                	
-	    	window.parent.setVideoUrl(imgUrl.trim());               	
-	    }
-	    else{
-			$(window.parent.$("#"+$("#controlId").val()+"").val(imgUrl.trim()));
-		}
+
+        $(window.parent.$("#"+$("#controlId").val()+"").val(imgUrl.trim()));
+
+        // if($("#controlId").val()=="editLogo"){
+	    	// window.parent.setLogoUrl(imgUrl.trim());
+        // }else if($("#controlId").val()=="editImg"){
+	    	// window.parent.setImgUrl(imgUrl.trim());
+        // }else if($("#controlId").val()=="editVideo"){
+	    	// window.parent.setVideoUrl(imgUrl.trim());
+        // }
+        // else{
+        //
+		// }
     }
 }
