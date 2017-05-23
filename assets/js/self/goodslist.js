@@ -119,7 +119,7 @@ $(document).on('click.bs.carousel.data-api','#btnDel',function (e){
 
 $(document).on('click.bs.carousel.data-api','#btnAdd',function (e){
     // tool.layer("test",[100,100],"http://localhost:63342/boss/user/userlist.html","http://localhost:63342/boss/user/userlist.html","http://localhost:63342/boss/user/userlist.html");
-    layer.open({
+    /*layer.open({
         type: 2,
         title: ['新增商品', 'background-color: #00bb9d;text-align:center;font-size:18px;'],
         shadeClose: true,
@@ -133,5 +133,17 @@ $(document).on('click.bs.carousel.data-api','#btnAdd',function (e){
                 $("#popupForm").submit();
             }
         }
-    });
+    });*/
+    window.location.href="goodsForm.html";
+});
+
+$(document).on('click.bs.carousel.data-api','#btnUpd',function (e){
+    // 判断是否至少选择一项
+    var checkedNum = $("input[name='subChk']:checked").length;
+    if(checkedNum == 0) {
+        layer.alert('请选择至少一项！');
+        return;
+    }
+    var $gid = $($("input[name='subChk']:checked")[0]).val();
+    window.location.href="goodsForm.html?goodsId="+$gid;
 });

@@ -4,8 +4,8 @@ var domainUrl="";
     function getToken(folderName){
 		$.ajax({
 			type: 'POST',
-			url: "http://119.29.216.138:8090/mall/upload/getToken",
-            // url: baseMallUrl+"/upload/getToken",
+			// url: "http://119.29.216.138:8090/mall/upload/getToken",
+            url: baseMallUrl+"/upload/getToken",
 			data:"folderName="+folderName,
 			success: function(data) {
 			    console.log(data);
@@ -244,14 +244,14 @@ function setUploadImgUrl(){
     var imgUrl="";
     $('#fsUploadProgress').find("div[name='imgUrlDiv']").each(function(a,b){
     	imgUrl+=$(b).find("a:eq(0)").html()+";";
-        alert("imgUrl: "+imgUrl);
+        // alert("imgUrl: "+imgUrl);
     } );              	
     imgUrl=imgUrl.substr(0,imgUrl.length-1);
     console.log("imgUrl: "+imgUrl);
     if(imgUrl.length>0)
     {
 
-        $(window.parent.$("#"+$("#controlId").val()+"").val(imgUrl.trim()));
+        // $(window.parent.$("#"+$("#controlId").val()+"").val(imgUrl.trim()));
 
         // if($("#controlId").val()=="editLogo"){
 	    	// window.parent.setLogoUrl(imgUrl.trim());
@@ -264,4 +264,10 @@ function setUploadImgUrl(){
         //
 		// }
     }
+    return imgUrl.trim();
 }
+
+$(document).ready(function () {
+    var folderName="mall-test01";
+    getToken(folderName);
+});
