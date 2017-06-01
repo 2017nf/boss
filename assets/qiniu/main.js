@@ -5,7 +5,7 @@ var domainUrl="";
 		$.ajax({
 			type: 'POST',
 			// url: "http://119.29.216.138:8090/mall/upload/getToken",
-            url: baseMallUrl+"/upload/getToken",
+            url: baseUrl+"/upload/getToken",
 			data:"folderName="+folderName,
 			success: function(data) {
 			    console.log(data);
@@ -264,6 +264,7 @@ function setUploadImgUrl(){
         //
 		// }
     }
+    // alert("图片的地址:"+imgUrl.trim());
     return imgUrl.trim();
 }
 

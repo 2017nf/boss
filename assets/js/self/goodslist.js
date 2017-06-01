@@ -145,5 +145,6 @@ $(document).on('click.bs.carousel.data-api','#btnUpd',function (e){
         return;
     }
     var $gid = $($("input[name='subChk']:checked")[0]).val();
+    // alert($gid);
     window.location.href="goodsForm.html?goodsId="+$gid;
 });

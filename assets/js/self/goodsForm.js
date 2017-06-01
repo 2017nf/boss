@@ -1,5 +1,6 @@
 tool.gologin();
 var action = "ADD";
+var token = sessionStorage.getItem("token");
 function save() {
     if ($("input[name='name']").val() == "") {
         // alert("商品名不能为空!!!");
@@ -55,6 +56,8 @@ function save() {
 }
 //新增
 add = function () {
+    //设置token
+    $("#token").val(token);
     $.ajax({
         cache: true,
         type: "POST",
@@ -77,6 +80,7 @@ add = function () {
 }
 //修改
 update = function () {
+    $("#token").val(token);
     $.ajax({
         cache: true,
         type: "POST",
@@ -115,6 +119,7 @@ $.getUrlParam = function (name) {
 init = function () {
     getSort();
     var paramGoodsId = $.getUrlParam("goodsId");
+    // alert("商品id为："+paramGoodsId);
     if (paramGoodsId == null || paramGoodsId == undefined) {
         return;
     }
@@ -123,15 +128,18 @@ init = function () {
         cache: true,
         type: "GET",
         url: baseUrl + "/goods/detail",
-        data: {"goodsId": paramGoodsId},// 你的formid
+        data: {"goodsId": paramGoodsId,"token":token},// 你的formid
         async: false,
         error: function (request) {
             alert("Connection error");
         },
         success: function (data) {
+            // console.log(data);
             if (data.code == 200) {
+                // alert("返回成功:"+data.result.name);
                 reform(data.result);
             } else {
+                // alert("返回失败");
                 alert(data.msg);
                 return;
             }
