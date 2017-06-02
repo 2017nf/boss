@@ -40,8 +40,8 @@ function login() {
         success: function (data) {
             console.log(data);
             if (data.code==200){
-                localStorage.setItem("token",data.result.token);
-                localStorage.setItem("userInfo",JSON.stringify(data.result));
+                sessionStorage.setItem("token",data.result.token);
+                sessionStorage.setItem("userInfo",JSON.stringify(data.result));
                 sessionStorage.setItem("token",data.result.token);
                 sessionStorage.setItem("userInfo",JSON.stringify(data.result));
                 window.location.href="index.html";

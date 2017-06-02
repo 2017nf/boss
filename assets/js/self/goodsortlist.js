@@ -117,7 +117,7 @@ function save() {
         data:$('#popupForm').serialize(),// 你的formid
         // async: false,
         beforeSend: function(request) {
-            request.setRequestHeader("token", localStorage.getItem("token"));
+            request.setRequestHeader("token", sessionStorage.getItem("token"));
         },
         error: function(request) {
             alert("Connection error");
@@ -151,7 +151,7 @@ function delsort(obj) {
         url:baseUrl+"/goods/delsort",
         data:{id:goodsSortId},// 你的formid
         beforeSend: function(request) {
-            request.setRequestHeader("token", localStorage.getItem("token"));
+            request.setRequestHeader("token", sessionStorage.getItem("token"));
         },
         error: function(request) {
             alert("Connection error");

@@ -85,28 +85,28 @@ var tool = {
         if (!this.islogin()) {
             window.location.href = "../login.html";
         }
-        $(".nickName").html(JSON.parse(localStorage.getItem("userInfo")).nickName);
+        $(".nickName").html(JSON.parse(sessionStorage.getItem("userInfo")).nickName);
     },
     indexgologin: function () {
         var href = window.location;
         if (!this.islogin()) {
             window.location.href = "login.html";
         }
-        $(".nickName").html(JSON.parse(localStorage.getItem("userInfo")).nickName);
+        $(".nickName").html(JSON.parse(sessionStorage.getItem("userInfo")).nickName);
     },
     islogin: function () {
-        var token = localStorage.getItem("userInfo");
+        var token = sessionStorage.getItem("userInfo");
         if (token) {
             return true;
         }
         return false;
     },
     loginout: function () {
-        localStorage.clear();
+        sessionStorage.clear();
         window.location.href="../login.html";
     },
     indexLoginOut: function () {
-        localStorage.clear();
+        sessionStorage.clear();
         window.location.href="login.html";
     }
 };
@@ -114,11 +114,11 @@ var tool = {
 function getUserInfo() {
     if (tool.islogin()) {
         var user = {
-            id: JSON.parse(localStorage.getItem("userInfo")).id,
-            userName: JSON.parse(localStorage.getItem("userInfo")).userName,
-            nickName: JSON.parse(localStorage.getItem("userInfo")).nickName,
-            phone: JSON.parse(localStorage.getItem("userInfo")).phone,
-            headImgUrl: JSON.parse(localStorage.getItem("userInfo")).headImgUrl
+            id: JSON.parse(sessionStorage.getItem("userInfo")).id,
+            userName: JSON.parse(sessionStorage.getItem("userInfo")).userName,
+            nickName: JSON.parse(sessionStorage.getItem("userInfo")).nickName,
+            phone: JSON.parse(sessionStorage.getItem("userInfo")).phone,
+            headImgUrl: JSON.parse(sessionStorage.getItem("userInfo")).headImgUrl
         }
         return user;
     }
