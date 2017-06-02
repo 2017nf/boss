@@ -6,8 +6,9 @@ var thead = "<tr>" +
     "<th>商品分类ICON</th>" +
     "<th>排序</th>" +
     "<th>创建时间</th>" +
+    "<th>操作</th>" +
     "</tr>";
-var tmpl = "<tr class='odd gradeX'><td class='display'>${0}</td><td>${1}</td><td >${2}</td><td >${3}</td><td >${4}</td></tr>";
+var tmpl = "<tr class='odd gradeX'><td name='goodsSortId' class='display'>${0}</td><td>${1}</td><td >${2}</td><td >${3}</td><td >${4}</td><td>${5}</td></tr>";
 var data = [];
 var option = {
     pageSize: 10,
@@ -33,7 +34,7 @@ layui.use(['laypage', 'layer'], function () {
         layui.each(data, function (index, item) {
             console.log("item : " + item);
             arr.push(
-                tmpl.replace("${0}", item.id).replace("${1}", item.name).replace("${2}", "<img src='" + item.icon + "' style='width: 50px;height: 50px'>").replace("${3}", item.rank).replace("${4}", tool.formatDate(item.createTime))
+                tmpl.replace("${0}", item.id).replace("${1}", item.name).replace("${2}", "<img src='" + item.icon + "' style='width: 50px;height: 50px'>").replace("${3}", item.rank).replace("${4}", tool.formatDate(item.createTime)).replace("${5}",'<button id="btn" class="btn btn-info" onclick="delsort(this)">删除</button>')
             );
         });
         return arr.join('');
@@ -85,3 +86,84 @@ window.onload = function () {
     window.frames["image_upload_iframe"].getToken(folderName);
     image_upload_iframe.window.document.getElementById("controlId").value = "editLogo";
 };
+
+
+
+function save() {
+    var img = window.frames["image_upload_iframe"].setUploadImgUrl();
+    $("input[name='icon']").val(img);
+    var icon=$("input[name='icon']").val();
+    var rank = $("input[name='rank']").val();
+    var name = $("input[name='name']").val();
+
+    if(!name){
+        alert("商品分类名不能为空!!!");
+        return;
+    }
+
+    if(!rank){
+        alert("分类排名不能为空");
+        return;
+    }
+    if(!icon){
+        alert("商品分类ICON不能为空");
+        return;
+    }
+    $.ajax({
+        // cache: true,
+        type: "POST",
+        url:baseUrl+"/goods/addsort",
+        // dataType:'jsonp',
+        data:$('#popupForm').serialize(),// 你的formid
+        // async: false,
+        beforeSend: function(request) {
+            request.setRequestHeader("token", localStorage.getItem("token"));
+        },
+        error: function(request) {
+            alert("Connection error");
+        },
+        success: function(data) {
+            if(data.code == 200){
+                alert("新增商品分类成功!");
+                parent.layer.close(index);
+            }else {
+                alert(data.msg);
+                return;
+            }
+        }
+    });
+}
+
+
+function delsort(obj) {
+
+    console.log($(obj).parent("tr").first().find("td"));
+    var goodsSortId=$(obj).parent().parent().find("td").first().text();
+    alert(goodsSortId);
+    if(!goodsSortId){
+        alert("获取商品分类id失败，删除异常");
+        return;
+    }
+
+
+    $.ajax({
+        type: "POST",
+        url:baseUrl+"/goods/delsort",
+        data:{id:goodsSortId},// 你的formid
+        beforeSend: function(request) {
+            request.setRequestHeader("token", localStorage.getItem("token"));
+        },
+        error: function(request) {
+            alert("Connection error");
+        },
+        success: function(data) {
+            if(data.code == 200){
+                alert("删除商品分类成功!");
+                parent.layer.close(index);
+            }else {
+                alert(data.msg);
+                return;
+            }
+        }
+    });
+}
