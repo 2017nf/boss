@@ -39,7 +39,7 @@ var render = function (data, tmpl) {
     layui.each(data, function (index, item) {
         arr.push(
             tmpl.replace("${0}","<input type='checkbox' name='subChk' value='"+item.id+"'/>").replace("${1}", item.name).replace("${2}", item.originalPrice+"元").replace("${3}", item.price+"元").
-            replace("${4}", "<img src='"+item.icon+"' style='width: 50px;height: 50px'>").replace("${5}", "暂无").replace("${6}", item.stock).replace("${7}", item.statusName).replace("${8}", tool.formatDate(item.createTime))
+            replace("${4}", "<img src='"+item.icon+"' style='width: 50px;height: 50px'>").replace("${5}",item.detail == null ? "暂无" : item.detail).replace("${6}", item.stock).replace("${7}", item.statusName).replace("${8}", tool.formatDate(item.createTime))
         );
     });
     return arr.join('');
