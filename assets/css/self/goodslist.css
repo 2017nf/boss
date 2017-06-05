@@ -1,0 +1,10 @@
+
+
+.goodsdetail{
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 230px;
+    border: none;
+}

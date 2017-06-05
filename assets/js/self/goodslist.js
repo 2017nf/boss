@@ -3,7 +3,7 @@
  */
 tool.gologin();
 var url = baseUrl +"/goods/list";
-var thead="<tr>"+
+var thead="<tr >"+
     "<th><input type='checkbox' value='all' id='chkAll'></th>"+
     "<th>商品名</th>"+
     "<th>商家原价</th>"+
@@ -14,7 +14,7 @@ var thead="<tr>"+
     "<th>状态</th>"+
     "<th>创建时间</th>"+
     "</tr>";
-var tmpl = "<tr class='odd gradeX'><td>${0}</td><td>${1}</td><td >${2}</td><td >${3}</td><td >${4}</td><td>${5}</td><td>${6}</td><td>${7}</td><td>${8}</td></tr>";
+var tmpl = "<tr class='odd gradeX '><td >${0}</td><td >${1}</td><td >${2}</td><td >${3}</td><td >${4}</td><td ><span class='goodsdetail td-middle'>${5}</span></td><td >${6}</td><td >${7}</td><td >${8}</td></tr>";
 var data = [];
 var option = {
     pageSize: 10,
